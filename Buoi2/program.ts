@@ -5,10 +5,10 @@ import { login, loginWithCallback, loginWithCallback2, showWelcome, showLoginRes
 import { signinPromise, getUserInfo, combinePromise } from './promise';
 // x = 10;
 // console.log('x = ' + x);
-let x: number = 20;
+//let x: number = 20;
 //console.log('x = ' + x);
 
-let y: string = '123abc';
+//let y: string = '123abc';
 //console.log('y = ' + y);
 
 function total(a: number, b: number){
@@ -96,20 +96,20 @@ var date: number[] = [12, 11, 2022];
 var [day, month, year] = date;
 console.log('day = ' + day + '; month = ' + month + '; year = ' + year);
 //Object
-var user = {
+var person = {
     firstName: 'Nguyen Quang',
     lastName: 'Hai',
     age: 25
 }
 
-const { firstName: f, lastName: l } = user;
-const { age: a } = user;
-const { age } = user;
+const { firstName: f, lastName: l } = person;
+const { age: ag } = person;
+const { age } = person;
 console.log('Railway 38 reactjs Buoi2');
 
-/*
-    Array()
-*/
+
+// Array()
+
 var numbers: number[] = [1, 2, 3];//typescript
 var typeString: string[] = ['DEV', 'TEST', 'SCRUM_MASTER'];//typescript
 
@@ -192,9 +192,7 @@ function printArr(arr) {
     });
 }
 
-/*
-    Object{}
-*/
+//Object{}
 
 var person = {
     firstName: 'Tom',
@@ -203,10 +201,10 @@ var person = {
     //famousFilm: 'Forest Gump'
 }
 
-var {firstName: f, age: a} = person;// Từ ES6 mới dùng khai báo này
+//var {firstName: f, age: ag} = person;// Từ ES6 mới dùng khai báo này
 //Tương đương
-var a = person.age;
-var f = person.firstName;
+// var a = person.age;
+// var f = person.firstName;
 
 var { lastName } = person;// var lastName = person.lastName;
 
@@ -254,6 +252,81 @@ var welcomeText2 = 'Chào mừng ' + fullName2 +  ' tới với VTI Academy';
 
 console.log(welcomeText);
 console.log(welcomeText2);
+
+/**
+ *  Arrow function
+ */
+// const functionA = (x) => {
+//     console.log('x = ' + x);
+// }
+
+// const functionA = x => {
+//     console.log('x = ' + x);
+// }
+
+const fncA = x => console.log('x = ' + x);
+
+// const fncSqrt = x => {
+//     return Math.pow(x, 0.5);
+// }
+
+const fncSqrt = x => Math.pow(x, 0.5);
+
+const fncSquare = x => {
+    return fncMultiply(x, x);
+}
+
+//const fncSquare = x => fncMultiply(x, x);
+
+const fncMultiply = (a, b) => {
+    return a * b;
+}
+
+//console.log('square function: ' + fncSquare(10));
+
+// function c (x) {
+//     console.log('function a running...');
+//     return function d(y) {
+//         console.log('function b running...');
+//         return x + y
+//     };
+// }
+
+// function c (x) {
+//     return y => {
+//         return x + y
+//     };
+// }
+
+const c = x => y => x + y;
+
+console.log(c(200)(300));
+
+const signin = (username, password, callback) => {
+    callback(username, password);
+}
+
+// const showUserInfo = (username, password) => {
+//     console.log('Username: ' + username + '; password: ' + password);
+// }
+
+const showUserInfo = (email) => { 
+    return (username, password) => {
+        console.log('Username: ' + username + '; password: ' + password);
+        console.log('Email: ' + email);
+    }
+}
+
+// const showUserInfo = email => (username, password) => {
+//     console.log('Username: ' + username + '; password: ' + password);
+//     console.log('Email: ' + email);
+// }
+
+
+//signin('tuananh', '123abc', showUserInfo);
+
+signin('tuananh', '123abc', showUserInfo('111111@gmail.com'));
+
 
 /**
  * Promise

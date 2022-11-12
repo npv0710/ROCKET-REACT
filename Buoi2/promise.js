@@ -21,7 +21,6 @@ var signinPromise = function (username, password) {
                 reject(error);
             }
         }, 3000);
-        console.log('123abc');
     });
 };
 exports.signinPromise = signinPromise;
