@@ -79,14 +79,6 @@ var handleError = function (msg) {
 })["catch"](function (err) {
     console.log(err);
 });
-// console.log('Log function getUserInfo: ')
-// console.log(getUserInfo());
-// getUserInfo()
-// .then(data => {
-//     console.log('Data response in program: ');
-//     console.log(data);
-// })
-// .catch(err => console.log(err))
 //combinePromise();
 // console.log('log combine promise: ');
 // combinePromise();

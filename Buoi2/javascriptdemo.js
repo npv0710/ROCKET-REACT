@@ -37,7 +37,8 @@ class Account {
         this.username = username;
     }
     fullname;
-    username
+    username;
+    
 }
 
 var ac = new Account();
@@ -55,3 +56,25 @@ var x = 25;
 
 console.log('x + 25 = ' + (x + 25));
 
+//Con trỏ this trong callback
+var user = {
+    username: 'Quang Hai',
+    age: 25,
+    showInfo() {
+        console.log('Username: ' + this.username + '; Age: ' + this.age);
+    }
+}
+
+user.showInfo();
+
+function handleClick() {
+    user.showInfo();
+}
+
+$('#btn').css({color: 'red'})
+
+$('#btn').click(function() {
+    alert('Click Me...');
+})
+
+$('#btn').click(user.showInfo)

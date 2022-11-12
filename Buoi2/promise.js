@@ -21,6 +21,7 @@ var signinPromise = function (username, password) {
                 reject(error);
             }
         }, 3000);
+        console.log('123abc');
     });
 };
 exports.signinPromise = signinPromise;
@@ -33,23 +34,14 @@ function getUserInfo() {
                 resolve(request.responseText);
             }
             else {
-                console.log('request error 123abc...');
                 reject(Error(request.responseText));
             }
         };
         request.onerror = function () {
-            console.log('requst error...');
             reject(Error('Error fetching data'));
         };
         request.send();
     });
-    // .then(data => {
-    //     console.log('request success & data received: ');
-    //     console.log(data);
-    // })
-    // .catch(err => {
-    //     console.log(err);
-    // })
 }
 exports.getUserInfo = getUserInfo;
 function getUserInfo2() {
