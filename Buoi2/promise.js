@@ -105,7 +105,7 @@ var combinePromise2 = function () {
 };
 exports.combinePromise2 = combinePromise2;
 var combinePromise3 = function () {
-    Promise.allSettled([firstPromise, secondPromise, thirdPromise])
+    Promise.allSettled([firstPromise(), secondPromise(), thirdPromise()])
         .then(function (data) {
         console.log('data from combine promise on module promise: ');
         console.log(data);

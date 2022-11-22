@@ -111,7 +111,7 @@ var combinePromise2 = () => {
 }
 
 var combinePromise3 = () => {
-    Promise.allSettled([firstPromise, secondPromise, thirdPromise])
+    Promise.allSettled([firstPromise(), secondPromise(), thirdPromise()])
     .then(data => {
         console.log('data from combine promise on module promise: ');
         console.log(data);

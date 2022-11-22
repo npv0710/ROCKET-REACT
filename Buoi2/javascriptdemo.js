@@ -71,10 +71,19 @@ function handleClick() {
     user.showInfo();
 }
 
+function a (callback) {
+    callback();
+}
+
+//a(user.showInfo);
+a(user.showInfo.bind(user));
+
 $('#btn').css({color: 'red'})
 
 $('#btn').click(function() {
-    alert('Click Me...');
+    //alert('Click Me...');
 })
 
-$('#btn').click(user.showInfo)
+//$('#btn').click(user.showInfo)
+
+$('#btn').click(user.showInfo.bind(user))

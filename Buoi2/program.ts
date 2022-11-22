@@ -2,7 +2,7 @@ export {};
 import User from './account';
 import { showAccountInfo} from './account';
 import { login, loginWithCallback, loginWithCallback2, showWelcome, showLoginResult, functionA } from './callback';
-import { signinPromise, getUserInfo, combinePromise } from './promise';
+import { signinPromise, getUserInfo, combinePromise, combinePromise3 } from './promise';
 // x = 10;
 // console.log('x = ' + x);
 //let x: number = 20;
@@ -348,25 +348,25 @@ const handleError = (msg) => {
 // .catch(handleError)
 
 
-signinPromise('quanghai', '111111')
-.then(function(x) {
-    console.log(x);
-})
-// .catch((msgErr) => {
+// signinPromise('quanghai', '111111')
+// .then(function(x) {
+//     console.log(x);
+// })
+// // .catch((msgErr) => {
+// //     console.log(msgErr);
+// // })
+// .catch(msgErr => {
 //     console.log(msgErr);
 // })
-.catch(msgErr => {
-    console.log(msgErr);
-})
 
-getUserInfo()
-.then(data => {
-    console.log('request success & data received: ');
-    console.log(data);
-})
-.catch(err => {
-    console.log(err);
-})
+// getUserInfo()
+// .then(data => {
+//     console.log('request success & data received: ');
+//     console.log(data);
+// })
+// .catch(err => {
+//     console.log(err);
+// })
 
 //combinePromise();
 
@@ -386,4 +386,4 @@ getUserInfo()
 
 //combinePromise2();
 
-//combinePromise3();
+combinePromise3();

@@ -273,19 +273,24 @@ var handleError = function (msg) {
 // signinPromise('quanghai', '111112')
 // .then(handleSuccess)
 // .catch(handleError)
-(0, promise_1.signinPromise)('quanghai', '111111')
-    .then(function (x) {
-    console.log(x);
-})["catch"](function (msgErr) {
-    console.log(msgErr);
-});
-(0, promise_1.getUserInfo)()
-    .then(function (data) {
-    console.log('request success & data received: ');
-    console.log(data);
-})["catch"](function (err) {
-    console.log(err);
-});
+// signinPromise('quanghai', '111111')
+// .then(function(x) {
+//     console.log(x);
+// })
+// // .catch((msgErr) => {
+// //     console.log(msgErr);
+// // })
+// .catch(msgErr => {
+//     console.log(msgErr);
+// })
+// getUserInfo()
+// .then(data => {
+//     console.log('request success & data received: ');
+//     console.log(data);
+// })
+// .catch(err => {
+//     console.log(err);
+// })
 //combinePromise();
 // console.log('log combine promise: ');
 // combinePromise();
@@ -298,4 +303,4 @@ var handleError = function (msg) {
 // .catch(err => console.log(err));
 //combinePromise();
 //combinePromise2();
-//combinePromise3();
+(0, promise_1.combinePromise3)();
