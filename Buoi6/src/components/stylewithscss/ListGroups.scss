@@ -1,0 +1,125 @@
+$h1_text_color: #68217A;
+.list-groups {
+    h1 {
+        color: $h1_text_color;
+    }
+    .content {
+        width: 60%;
+        margin: auto;
+        margin-top: 50px;
+        // background-color: #F9FAFA;
+        
+        table {
+            border: 1px solid #dddddd;
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 2px 5px rgb(0 0 0 / 14%);
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 9px;
+            text-align: center;
+            vertical-align: top;
+        }
+
+        table th:first-child {
+            width: 80px;
+        }
+
+        table th:last-child {
+            width: 120px;
+        }
+
+        table th:nth-last-child(2) {
+            width: 150px;
+        }
+
+        tbody tr {
+            // border: 1px solid #ddd;
+        }
+
+        table tbody tr:nth-child(odd) {
+            // background-color: #f9fafa;
+
+            background-color: rgba(0, 0, 0, .05);
+        }
+
+        tbody tr:hover {
+            background-color: #e6e7e9 !important;
+        }
+
+        .icon-add {
+            text-align: right;
+        }
+
+        .type-filter {
+            width: 150px;
+        }
+
+        .filter-form {
+            display: flex;
+            position: relative;
+            margin-top: 50px;
+            width: 400px;
+            justify-content: space-around;
+            gap: 10px;
+        }
+       
+       .icon-close {
+           position: absolute;
+           top: 10px;
+           right: 20px;
+           font-size: 11px !important;
+           cursor: pointer;
+        //    display: none !important;
+       }
+    }
+}
+
+.title-box {
+    color: #dacb46;
+    text-shadow: 1px 1px 1px #1a1a1a;
+    display: inline-block;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+@mixin colorAndFont {
+    color: red;
+    font-size: 20px;
+}
+
+@mixin colorAndFontFunction($color, $fontSize) {
+    color: $color;
+    font-size: $fontSize;
+    font-weight: bold;
+}
+
+.navbar {
+    width: 200px;
+    ul {
+        border: 1px solid lightgray;
+        li {
+            background-color: #e7eaed;
+            a {
+                text-decoration: none;
+                @include colorAndFont;
+            }
+        }
+    }
+    .logout {
+        border: 1px solid gray;
+        padding: 5px 0;
+        text-align: center;
+        @extend.title-box;
+
+        span {
+            border: 1px solid gray;
+            border-radius: 3px;
+            margin: 0 20px;
+            text-shadow: none;
+            @include colorAndFontFunction(green, '24px');
+        }
+    }
+}
