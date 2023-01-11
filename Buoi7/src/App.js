@@ -8,7 +8,7 @@ import ContainerComponent from './components/sharedata/ContainerComponent';
 import PrManageState from './components/sharedata/PrManageState';
 import Signin from './pages/signin/Signin';
 
-import { BrowserRouter as Router, Link, Redirect, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import Home from './pages/home/Home';
 import Signup from './pages/singup/Signup';
 import PersonList from './components/sharedata/PersionList';
@@ -48,8 +48,6 @@ function App() {
             setPassword(e.target.value);
         }
     }
-
-    const [loggedIn, setLoggedIn] = useState(true)
 
     return (
         // <div className="App">
@@ -106,7 +104,7 @@ function App() {
         // <ContainerComponent />
         <Router>
             <div className='App'>
-                <div className='menu-links'>
+                {/* <div className='menu-links'>
                     <nav>
                         <ul>
                             <Link to='/'>Home</Link>
@@ -116,18 +114,15 @@ function App() {
                             <Link to='/persons/1'>Person detail id = 1</Link>
                         </ul>
                     </nav>
-                </div>
+                </div> */}
                 
-                <Switch>
-                    {/* <Route path='/' exact component={Home}/> */}
-                    <Route path='/' exact render={() => (
-                        !loggedIn ? <Redirect to='/sigin' /> : <Home />
-                    )}/>
-                    <Route path='/signin' component={Signin}/>
-                    <Route path='/signup' component={Signup}/>
-                    <Route path='/persons' exact render={routeProps => <PersonList persons={persons} {...routeProps}/>}/>
-                    <Route path='/persons/:id' render={routeProps => <PersonDetail {...routeProps}/>}/>
-                </Switch>
+                    <Switch>
+                        <Route path='/signin' component={Signin}/>
+                        <Route path='/signup' component={Signup}/>
+                        <Route path='/persons/:id' render={routeProps => <PersonDetail {...routeProps}/>}/>
+                        <Route path='/persons' exact render={routeProps => <PersonList persons={persons} {...routeProps}/>}/>
+                        <Route path='/' component={Home}/>
+                    </Switch>
             
             </div>
         </Router>
