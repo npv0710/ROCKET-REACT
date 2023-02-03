@@ -1,0 +1,14 @@
+.footer {
+    padding: 20px;
+    
+}
+
+.footer.dark {
+    background-color: #3c4b64;
+    color: white;
+}
+
+.footer.light {
+    background-color: #f6f6f6;
+    color: black;
+}
